@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;   //Defines what 1rem is
+
+    @include respond(tab-land) {
+        font-size: 56.25%;         // 1rem == 
+    }
+    @include respond(tab-port) {
+        font-size: 50%;         //1rem = 8px
+    }
+    @include respond(phone) {
+        font-size: 50%;         //1rem = 8px
+    }
+    @include respond(large-scr) {
+        font-size: 80%; 
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond (tab-port) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
